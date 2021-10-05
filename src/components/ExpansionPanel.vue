@@ -6,7 +6,7 @@
     md="12"
     sm="12"
   >
-    <v-expansion-panels>
+    <v-expansion-panels v-model="state.panel">
       <v-expansion-panel>
         <v-expansion-panel-header>
           <div class="title-content">
@@ -26,7 +26,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, reactive } from '@vue/composition-api'
+
+interface State {
+  panel: number;
+}
+
+interface SetupReturn {
+  state: State;
+}
 
 export default defineComponent({
   props: {
@@ -37,6 +45,14 @@ export default defineComponent({
     namePanel: {
       type: String,
       required: true
+    }
+  },
+  setup (): SetupReturn {
+    const state = reactive<State>({
+      panel: 0
+    })
+    return {
+      state
     }
   }
 })

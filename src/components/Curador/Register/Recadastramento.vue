@@ -21,11 +21,11 @@
             <v-radio
               label="presencial"
               value="radio-1"
-            ></v-radio>
+            />
             <v-radio
               label="remoto"
               value="radio-2"
-            ></v-radio>
+            />
           </v-radio-group>
         </v-container>
       </v-col>

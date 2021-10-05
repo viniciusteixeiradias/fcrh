@@ -1,14 +1,14 @@
 <template>
-  <Curador />
+  <RegisterCurador />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Curador from '../components/Curador/index.vue'
+import RegisterCurador from '@/components/Curador/Register/index.vue'
 
 export default Vue.extend({
   components: {
-    Curador
+    RegisterCurador
   }
 })
 </script>

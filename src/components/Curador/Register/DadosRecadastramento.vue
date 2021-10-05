@@ -7,7 +7,7 @@
       <v-col
         cols="12"
         sm="6"
-        md="4"
+        md="2"
       >
         <v-menu
           ref="menu"
@@ -28,7 +28,7 @@
               v-on="on"
               hide-details="auto"
               @blur="state.date = parseDate()"
-            ></v-text-field>
+            />
           </template>
           <v-date-picker
             v-model="state.date"
@@ -63,7 +63,7 @@
           label="Tipo do último recadastramento"
           value="Bancário"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -74,7 +74,7 @@
           label="Status do pagamento"
           value="Regular"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
     </v-row>
   </ExpansionPanel>

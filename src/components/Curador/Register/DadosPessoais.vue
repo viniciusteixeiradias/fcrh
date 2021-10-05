@@ -13,7 +13,7 @@
           label="Nome"
           value="Cláudia Freitas"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -24,7 +24,7 @@
           label="CPF"
           value="019.456.789-70"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -35,7 +35,7 @@
           label="Estado civil"
           value="Casada"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
     </v-row>
   </ExpansionPanel>

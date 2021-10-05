@@ -6,8 +6,13 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
+    name: 'Search',
+    component: () => import('../views/Curador/SearchCurador.vue')
+  },
+  {
+    path: '/register-curador',
     name: 'Curador',
-    component: () => import('../views/Curador.vue')
+    component: () => import('../views/Curador/RegisterCurador.vue')
   }
 ]
 

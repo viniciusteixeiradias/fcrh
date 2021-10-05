@@ -23,7 +23,7 @@
         <v-text-field
           label="Etiqueta SEI"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -33,7 +33,7 @@
         <v-text-field
           label="Caixa Postal"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
     </v-row>
     <v-row>
@@ -45,7 +45,7 @@
         <v-text-field
           label="Logradouro"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -55,7 +55,7 @@
         <v-text-field
           label="Cidade"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -65,7 +65,7 @@
         <v-autocomplete
           label="Pais"
           hide-details="auto"
-        ></v-autocomplete>
+        />
       </v-col>
     </v-row>
   </ExpansionPanel>

@@ -12,18 +12,30 @@
         <v-text-field
           label="Nome"
           hide-details="auto"
-        ></v-text-field>
+        />
+      </v-col>
+      <v-col
+        cols="12"
+        sm="6"
+        md="2"
+      >
+        <v-text-field
+          label="CPF"
+          hide-details="auto"
+        />
       </v-col>
       <v-col
         cols="12"
         sm="6"
         md="3"
       >
-        <v-text-field
-          label="CPF"
+        <v-file-input
+          label="Anexar Documento"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
+    </v-row>
+    <v-row>
       <v-col
         cols="12"
         sm="6"
@@ -47,8 +59,8 @@
               v-bind="attrs"
               v-on="on"
               hide-details="auto"
-              @blur="state.startDate = parseDate()"
-            ></v-text-field>
+              @blur="state.startDate = parseInitialDate()"
+            />
           </template>
           <v-date-picker
             v-model="state.startDate"
@@ -74,6 +86,56 @@
           </v-date-picker>
         </v-menu>
       </v-col>
+      <v-col
+        cols="12"
+        sm="6"
+        md="2"
+      >
+        <v-menu
+          ref="menu"
+          v-model="state.menuFinalDate"
+          :close-on-content-click="false"
+          :return-value.sync="state.finalDate"
+          transition="scale-transition"
+          offset-y
+          min-width="auto"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-text-field
+              v-model="state.finalDateFormated"
+              label="Data do último recadastramento"
+              prepend-icon="mdi-calendar"
+              readonly
+              v-bind="attrs"
+              v-on="on"
+              hide-details="auto"
+              @blur="state.finalDate = parseFinalDate()"
+            />
+          </template>
+          <v-date-picker
+            v-model="state.finalDate"
+            no-title
+            scrollable
+            locale="pt-BR"
+          >
+            <v-spacer></v-spacer>
+            <v-btn
+              text
+              color="primary"
+              @click="state.menuFinalDate = false"
+            >
+              Cancel
+            </v-btn>
+            <v-btn
+              text
+              color="primary"
+              @click="$refs.menu.save(state.finalDate)"
+            >
+              OK
+            </v-btn>
+          </v-date-picker>
+        </v-menu>
+      </v-col>
     </v-row>
   </ExpansionPanel>
 </template>
@@ -93,7 +155,8 @@ interface State {
 
 interface SetupReturn {
   state: State;
-  parseDate:() => void;
+  parseInitialDate:() => void;
+  parseFinalDate:() => void;
 }
 
 export default defineComponent({
@@ -112,22 +175,34 @@ export default defineComponent({
     })
 
     watch(() => state.startDate, () => {
-      parseDate()
+      parseInitialDate()
+    })
+
+    watch(() => state.finalDate, () => {
+      parseFinalDate()
     })
 
     onMounted(() => {
-      parseDate()
+      parseInitialDate()
+      parseFinalDate()
     })
 
-    function parseDate () {
+    function parseInitialDate () {
       if (!state.startDate) return
       const [year, month, day] = state.startDate.split('-')
       state.startDateFormated = `${day}/${month}/${year}`
     }
 
+    function parseFinalDate () {
+      if (!state.finalDate) return
+      const [year, month, day] = state.finalDate.split('-')
+      state.finalDateFormated = `${day}/${month}/${year}`
+    }
+
     return {
       state,
-      parseDate
+      parseInitialDate,
+      parseFinalDate
     }
   }
 })

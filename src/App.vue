@@ -95,4 +95,10 @@ body,
   justify-content: flex-end;
 }
 
+@media only screen and (min-height: 979px) {
+  .v-footer.footer.v-sheet.theme--light {
+    // background-color: black;
+  }
+}
+
 </style>

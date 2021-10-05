@@ -5,6 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:qa": "vue-cli-service build --mode qa",
+    "build:test": "vue-cli-service build --mode test",
+    "build:hml": "vue-cli-service build --mode homologation",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"

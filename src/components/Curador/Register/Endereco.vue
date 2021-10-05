@@ -24,12 +24,13 @@
         <v-text-field
           label="CEP"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
         sm="6"
-        md="2"
+        md="3"
+        class="d-flex align-center"
       >
         <v-btn
           class="search-button"
@@ -47,7 +48,7 @@
         <v-text-field
           label="Logradouro"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -57,7 +58,7 @@
         <v-text-field
           label="Bairro"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -67,7 +68,7 @@
         <v-text-field
           label="Número"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
     </v-row>
     <v-row>
@@ -79,7 +80,7 @@
         <v-text-field
           label="Complemento"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -89,7 +90,7 @@
         <v-text-field
           label="UF"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
       <v-col
         cols="12"
@@ -99,7 +100,7 @@
         <v-text-field
           label="Municipio"
           hide-details="auto"
-        ></v-text-field>
+        />
       </v-col>
     </v-row>
   </ExpansionPanel>
