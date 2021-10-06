@@ -1,7 +1,8 @@
 <template>
   <v-app>
+    <App-Bar/>
+
     <v-main>
-      <App-Bar />
       <div class="container_app">
         <v-img
           alt="logo sisap"
@@ -11,10 +12,10 @@
           <router-view :style="root"/>
         </v-img>
       </div>
-      <v-footer class="footer">
-        <p class="text-footer">Prodemge</p>
-      </v-footer>
     </v-main>
+    <v-footer class="footer" app>
+      <p class="text-footer">Prodemge</p>
+    </v-footer>
   </v-app>
 </template>
 
@@ -63,11 +64,14 @@ export default defineComponent({
 <style lang="scss">
 html,
 body,
-.v-application,
-.v-main {
+.v-application {
   height: 100%;
   overflow-y: auto !important;
   overflow-x: hidden !important;
+}
+
+.v-main {
+  overflow: hidden !important;
   background-color: #efefef;
 }
 
@@ -86,8 +90,7 @@ body,
   font-weight: bold;
 }
 .v-footer.footer.v-sheet.theme--light {
-  position:absolute;
-  bottom:0;
+  position: relative;
   width:100%;
   background-color: white;
   height: 30px;

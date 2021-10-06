@@ -3,6 +3,7 @@
     <ExpansionPanel
       namePanel="Filtro de Pesquisa"
       icon-name="fa-search"
+      :open="true"
     >
       <v-row>
         <v-col
@@ -33,6 +34,7 @@
         >
           <v-btn
             class="search-button"
+            @click="search()"
           >
             Buscar
           </v-btn>
@@ -42,6 +44,7 @@
     <ExpansionPanel
       namePanel="Resultado"
       icon-name="fa-file-alt"
+      :open="true"
     >
       <v-row>
         <v-col
@@ -64,8 +67,11 @@
         >
           <v-data-table
             :headers="state.headers"
-            :items="state.desserts"
+            :items="state.itens"
             :search="state.search"
+            :loading="state.loading"
+            class="elevation-1"
+            loading-text="Carregando... Por favor aguarde"
           >
             <template v-slot:[`item.recadastrar`]="{ item }">
               <v-btn
@@ -99,13 +105,16 @@ import router from '@/router'
 interface State {
   search: string;
   headers: Array<Header>;
-  desserts: Array<Items>;
+  itens: Array<Items>;
+  itensApi: Array<Items>;
+  loading: boolean;
 }
 
 interface SetupReturn {
   state: State;
   getColor: (situacao: string) => string;
   routerPush: (item: Items) => void;
+  search: () => void;
 }
 
 export default defineComponent({
@@ -130,7 +139,8 @@ export default defineComponent({
         { text: 'Data do Último Recadastramento', value: 'dataUltimoRecadastramento' },
         { text: 'Tipo do Recadastramento', value: 'tipoRecadastramento' }
       ],
-      desserts: [
+      itens: [],
+      itensApi: [
         {
           recadastrar: 'Botao',
           situacao: 'Pendente',
@@ -196,8 +206,20 @@ export default defineComponent({
           dataUltimoRecadastramento: '13/05/2021',
           tipoRecadastramento: 'Bancário'
         }
-      ]
+      ],
+      loading: false
     })
+
+    function sleep (ms: number) {
+      return new Promise(resolve => setTimeout(resolve, ms))
+    }
+
+    async function search () {
+      state.loading = true
+      await sleep(1000)
+      state.loading = false
+      state.itens = state.itensApi
+    }
 
     function routerPush (item: Items) {
       app.$router.push({
@@ -216,7 +238,8 @@ export default defineComponent({
     return {
       state,
       getColor,
-      routerPush
+      routerPush,
+      search
     }
   }
 })

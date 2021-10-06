@@ -61,7 +61,6 @@
       >
         <v-text-field
           label="Tipo do último recadastramento"
-          value="Bancário"
           hide-details="auto"
         />
       </v-col>
@@ -72,7 +71,6 @@
       >
         <v-text-field
           label="Status do pagamento"
-          value="Regular"
           hide-details="auto"
         />
       </v-col>

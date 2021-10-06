@@ -45,11 +45,15 @@ export default defineComponent({
     namePanel: {
       type: String,
       required: true
+    },
+    open: {
+      type: Boolean,
+      default: false
     }
   },
-  setup (): SetupReturn {
+  setup (props): SetupReturn {
     const state = reactive<State>({
-      panel: 0
+      panel: props.open ? 0 : 1
     })
     return {
       state

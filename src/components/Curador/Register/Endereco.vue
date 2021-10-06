@@ -7,19 +7,7 @@
       <v-col
         cols="12"
         sm="6"
-        md="3"
-      >
-        <div class="container-switch">
-          <p class="label-switch-address mr-3">Reside no exterior:</p>
-          <v-switch hide-details="auto"/>
-        </div>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        cols="12"
-        sm="6"
-        md="2"
+        md="1"
       >
         <v-text-field
           label="CEP"
@@ -118,16 +106,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.container-switch {
-  display: inline-flex;
-}
-
-.label-switch-address {
-  margin-bottom: 0;
-  align-items: end;
-  display: flex;
-}
-
 .search-button.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default {
   font-size: 0.8rem;
   background-color: #006699;

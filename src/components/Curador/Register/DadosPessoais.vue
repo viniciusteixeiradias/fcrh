@@ -11,18 +11,16 @@
       >
         <v-text-field
           label="Nome"
-          value="Cláudia Freitas"
           hide-details="auto"
         />
       </v-col>
       <v-col
         cols="12"
         sm="6"
-        md="3"
+        md="2"
       >
         <v-text-field
           label="CPF"
-          value="019.456.789-70"
           hide-details="auto"
         />
       </v-col>
@@ -33,9 +31,18 @@
       >
         <v-text-field
           label="Estado civil"
-          value="Casada"
           hide-details="auto"
         />
+      </v-col>
+      <v-col
+        cols="12"
+        sm="6"
+        md="3"
+      >
+        <div class="container-switch">
+          <p class="label-switch-address mr-3">Reside no exterior:</p>
+          <v-switch hide-details="auto"/>
+        </div>
       </v-col>
     </v-row>
   </ExpansionPanel>
@@ -51,3 +58,15 @@ export default defineComponent({
   }
 })
 </script>
+
+<style scoped>
+.container-switch {
+  display: inline-flex;
+}
+
+.label-switch-address {
+  margin-bottom: 0;
+  align-items: end;
+  display: flex;
+}
+</style>
