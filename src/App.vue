@@ -83,6 +83,7 @@ body,
 
 .v-image__image.v-image__image--cover {
   background-size: auto;
+  position: fixed;
 }
 
 .text-footer {
@@ -96,12 +97,6 @@ body,
   height: 30px;
   display: flex;
   justify-content: flex-end;
-}
-
-@media only screen and (min-height: 979px) {
-  .v-footer.footer.v-sheet.theme--light {
-    // background-color: black;
-  }
 }
 
 </style>

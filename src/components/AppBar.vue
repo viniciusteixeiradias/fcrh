@@ -16,7 +16,7 @@
         Login
       </v-btn>
       <div v-else class="logged">
-        <p class="mb-0 mr-2 name-user">{{ state.nameUser }}</p>
+        <p class="mb-0 name-user">{{ state.nameUser }}</p>
         <v-menu
           bottom
           offset-y
@@ -182,5 +182,23 @@ export default defineComponent({
   font-weight: 600;
   margin: 0;
   font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 890px) {
+  .name-user {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .name-user {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .name-user {
+    display: none;
+  }
 }
 </style>

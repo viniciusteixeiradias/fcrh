@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TitlePage titlePage="Recadastramento Inativos e Pensionistas Especiais"/>
     <ExpansionPanel
       namePanel="Filtro de Pesquisa"
       icon-name="fa-search"
@@ -98,6 +99,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from '@vue/composition-api'
+import TitlePage from '@/components/TitlePage.vue'
 import ExpansionPanel from '@/components/ExpansionPanel.vue'
 import { Header, Items } from '@/types/data_table'
 import router from '@/router'
@@ -119,7 +121,8 @@ interface SetupReturn {
 
 export default defineComponent({
   components: {
-    ExpansionPanel
+    ExpansionPanel,
+    TitlePage
   },
 
   setup (): SetupReturn {

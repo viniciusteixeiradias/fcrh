@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>
+      <TitlePage titlePage="Recadastramento Inativos e Pensionistas Especiais"/>
       <Recadastramento />
       <DadosPessoais />
       <Curatela />
@@ -39,6 +40,7 @@ import Endereco from '@/components/Curador/Register/Endereco.vue'
 import EnderecoExterior from '@/components/Curador/Register/EnderecoExterior.vue'
 import Contato from '@/components/Curador/Register/Contato.vue'
 import PopUpAssinatura from '@/components/Curador/Register/PopUpAssinatura.vue'
+import TitlePage from '@/components/TitlePage.vue'
 import { Items } from '@/types/data_table'
 import router from '@/router'
 
@@ -65,7 +67,8 @@ export default defineComponent({
     Endereco,
     EnderecoExterior,
     Contato,
-    PopUpAssinatura
+    PopUpAssinatura,
+    TitlePage
   },
 
   setup (): SetupReturn {

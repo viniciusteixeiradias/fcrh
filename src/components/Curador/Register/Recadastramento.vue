@@ -1,7 +1,8 @@
 <template>
   <ExpansionPanel
-    namePanel="Recadastramento Inativos e Pensionistas Especiais"
+    namePanel="Recadastramento"
     icon-name="fa-user-plus"
+    :open="true"
   >
     <v-row>
       <v-col

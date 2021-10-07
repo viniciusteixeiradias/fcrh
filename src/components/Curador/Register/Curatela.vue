@@ -10,6 +10,8 @@
         md="3"
       >
         <v-text-field
+          readonly
+          value="Talviz Nunes"
           label="Nome"
           hide-details="auto"
         />
@@ -20,22 +22,12 @@
         md="2"
       >
         <v-text-field
+          readonly
+          value="123.456.789-10"
           label="CPF"
           hide-details="auto"
         />
       </v-col>
-      <v-col
-        cols="12"
-        sm="6"
-        md="3"
-      >
-        <v-file-input
-          label="Anexar Documento"
-          hide-details="auto"
-        />
-      </v-col>
-    </v-row>
-    <v-row>
       <v-col
         cols="12"
         sm="6"
@@ -53,7 +45,7 @@
           <template v-slot:activator="{ on, attrs }">
             <v-text-field
               v-model="state.startDateFormated"
-              label="Data do último recadastramento"
+              label="Data Início"
               prepend-icon="mdi-calendar"
               readonly
               v-bind="attrs"
@@ -67,6 +59,7 @@
             no-title
             scrollable
             locale="pt-BR"
+            disabled
           >
             <v-spacer></v-spacer>
             <v-btn
@@ -79,6 +72,7 @@
             <v-btn
               text
               color="primary"
+              disabled
               @click="$refs.menu.save(state.startDate)"
             >
               OK
@@ -103,7 +97,7 @@
           <template v-slot:activator="{ on, attrs }">
             <v-text-field
               v-model="state.finalDateFormated"
-              label="Data do último recadastramento"
+              label="Data do Final"
               prepend-icon="mdi-calendar"
               readonly
               v-bind="attrs"
@@ -116,6 +110,7 @@
             v-model="state.finalDate"
             no-title
             scrollable
+            disabled
             locale="pt-BR"
           >
             <v-spacer></v-spacer>
@@ -129,6 +124,7 @@
             <v-btn
               text
               color="primary"
+              disabled
               @click="$refs.menu.save(state.finalDate)"
             >
               OK
