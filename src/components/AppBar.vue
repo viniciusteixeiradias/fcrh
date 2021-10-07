@@ -32,7 +32,7 @@
               <i class="fas fa-user-circle fa-2x"></i>
             </v-btn>
           </template>
-          <div class="dataUser">
+          <div class="dataUser flipInY">
             <v-list>
               <v-list-item @click="() => {}">
                 <v-list-item-title>
@@ -76,7 +76,7 @@ export default defineComponent({
     const state = reactive<State>({
       isLogged: true,
       dataUser: false,
-      nameUser: 'vinicius teixeira dias'
+      nameUser: 'PRODEMGE - COMPANHIA DE TECNOLOGIA DA INFORMAÇÃO DO ESTADO DE MINAS GERAIS'
     })
     return {
       state
@@ -86,6 +86,28 @@ export default defineComponent({
 </script>
 
 <style scoped>
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+  100% {
+    transform: perspective(400px);
+  }
+}
+
 .app-bar {
   background: #007484;
   background-image: linear-gradient(to bottom, #007484, #005965);
@@ -116,9 +138,15 @@ export default defineComponent({
 .dataUser {
   width: 250px;
   height: auto;
-  overflow: hidden;
   background-color: #ffffff;
-  /* background-color: #efefef; */
+  backface-visibility: visible !important;
+  animation-name: flipInY;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active {
+  overflow-y: hidden;
 }
 
 .icon-power {
